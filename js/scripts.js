@@ -1,8 +1,13 @@
-$(document).ready(function) {
-  $("form#add").submit(function(event) {
+$(document).ready(function() {
+  $("questionaire").submit(function(event) {
+    const age = parseInt($("input#age").val());
+    const gender = $("select#gender").val();
+
+    const quote = (100 - age) * 3;
+
+    $("#rate").text(quote);
+    $("#quote").show();
+
     event.preventDefault();
-    const number1 = parseInt($("#add1").val());
-    const number2 = parseInt($("#add2").val());
-    const result = add(number1, number2);
-    $("#output").text(result);
-}
+  });
+});

@@ -1,13 +1,21 @@
 $(document).ready(function() {
-  $("h1").click(function() {
-    alert("This is a header.");
-  });
+  $("#formOne").submit(function(event) {
+    const person1Input = $("input#person1").val();
+    const person2Input = $("input#person2").val();
+    const animalInput= $("input#animal").val();
+    const exclamationInput = $("input#exclamation").val();
+    const verbInput = $("input#verb").val();
+    const nounInput = $("input#noun").val();
 
-  $("p").click(function() {
-    alert("This is a paragraph.");
-  });
+    $(".person1").text(person1Input);
+    $(".person2").text(person2Input);
+    $(".animal").text(animalInput);
+    $(".exclamation").text(exclamationInput);
+    $(".verb").text(verbInput);
+    $(".noun").text(nounInput);
 
-  $("img").click(function() {
-    alert("This is an image.");
+    $("#story").show();
+
+    event.preventDefault();
   });
 });
